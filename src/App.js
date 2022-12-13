@@ -9,10 +9,16 @@ const App = () => {
     setUserDatas((prev) => [userData, ...prev]);
   };
 
+  const onDelete = (userIndex) => {
+    console.log(userIndex);
+    const newUserData = userDatas.filter((user, index) => index !== +userIndex);
+    setUserDatas(newUserData);
+  }
+
   return (
     <div>
       <UserInput onSubmit={onSubmit} />
-      <UserList userDatas={userDatas} />
+      <UserList userDatas={userDatas} onDelete={onDelete} />
     </div>
   );
 };
