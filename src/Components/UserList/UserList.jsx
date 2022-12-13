@@ -9,7 +9,9 @@ const UserList = (props) => {
       <ul>
         {userDetails.length !== 0 ? (
           userDetails.map((user, index) => {
-            return <li key={index}>{`${user.username} (${+user.userAge} years)`}</li>;
+            return (
+              <li key={index}>{`${user.username} (${+user.userAge} years)`}</li>
+            );
           })
         ) : (
           <li>No Users Found !!</li>
